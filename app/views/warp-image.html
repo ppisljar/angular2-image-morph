@@ -1,0 +1,29 @@
+<div class="img">
+    <div class="cover" [hidden]="progressService.getMatch()!=id">
+        <div [hidden]="id!='1'">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <p>SELECT A MATCHING POINT ON THE SECOND PHOTO</p>
+            <p>(shift + click to remove)</p>
+        </div>
+        <div [hidden]="id!='2'">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" ></span>
+            <p>SELECT A POINT ON THE FIRST PHOTO</p>
+            <p>(shift + click to remove)</p>
+        </div>
+
+    </div>
+    <canvas #myCanvas width="400" height="400"></canvas>
+    <div class="controls">
+        <button (click)="clearPoints()" class="btn" >
+            <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+        </button>
+
+        <div>
+
+            <input [id]="randomId" type="file" (change)="loadImage($event)" class="inputfile">
+            <label [attr.for]="randomId" class="inputfilelabel btn">
+                <span class="glyphicon glyphicon-open" aria-hidden="true"></span>
+            </label>
+        </div>
+    </div>
+</div>

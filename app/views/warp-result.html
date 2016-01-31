@@ -1,0 +1,61 @@
+
+<div class="img">
+    <div class="cover" [hidden]="!loading">
+        <img src="img/loading.gif">
+    </div>
+    <div class="result" [hidden]="!showresults">
+        <canvas #myCanvas width="400" height="400"></canvas>
+        <div class="controls">
+
+            <a href="{{getGifUrl()}}" class="btn" download="warp.gif">
+                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+            </a>
+            <a href="{{getFrameUrl()}}" class="btn" download="warp_frame.jpg">
+                <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+            </a>
+            <button (click)="showSettings()" class="btn" >
+                <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+            </button>
+            <button (click)="stepBack()" class="btn">
+                <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
+            </button>
+            <button (click)="pause()" class="btn" [hidden]="!playing">
+                <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+            </button>
+            <button (click)="play()" class="btn" [hidden]="playing">
+                <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+            </button>
+            <button (click)="stepForward()" class="btn">
+                <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
+            </button>
+        </div>
+        <img #gif>
+    </div>
+
+    <div class="settings" [hidden]="showresults">
+        <form class="form-horizontal">
+            <br><br>
+            <p>Click GENERATE once you are ready!</p>
+            <div class="form-group">
+                <label for="frames" class="col-sm-2 control-label">Frames</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="frames" placeholder="Frames" [(ngModel)]="frames">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" checked> Two way
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default" (click)="generate()">GENERATE</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

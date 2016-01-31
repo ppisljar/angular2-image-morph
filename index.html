@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Angular 2 Face Morph</title>
+
+
+
+</head>
+
+<!-- 3. Display the application -->
+<body>
+    <my-app>Loading...</my-app>
+
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="app/styles/main.css">
+
+    <script src="lib/imgwarp.js"></script>
+    <script src="lib/gif.js"></script>
+
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfill -->
+    <script src="lib/angular2/es6-shim.min.js"></script>
+
+    <script src="lib/angular2/angular2-polyfills.min.js"></script>
+    <script src="lib/angular2/Rx.umd.min.js"></script>
+    <script src="lib/angular2/angular2-all.umd.min.js"></script>
+
+    <!-- 2. Load our 'modules' -->
+    <script src='app/services/progress.service.js'></script>
+    <script src='app/components/warp-image.component.js'></script>
+    <script src='app/components/warp-result.component.js'></script>
+    <script src='app/components/app.component.js'></script>
+    <script src='app/main.js'></script>
+</body>
+
+</html>

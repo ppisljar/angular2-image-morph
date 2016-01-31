@@ -1,0 +1,73 @@
+
+
+<div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+            <div class="header clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand">Face Morph with Angular 2</h3>
+                    <nav>
+                        <ul class="nav masthead-nav">
+                            <li [class.active]="menustate=='start'"><a (click)="menuStart()">Start</a></li>
+                            <li [class.active]="menustate=='demo'"><a (click)="menuDemo()">Demo</a></li>
+                            <li><a href="http://peter.pisljar.si/#/en/projects/angular2_face_morph">About</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="inner">
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="alert alert-info" [hidden]="progressService.getStep()!=1" role="alert">Step 1: Upload two images you would like to morph</div>
+                        <div class="alert alert-info" [hidden]="progressService.getStep()!=2" role="alert">Step 2: Select matching points on the two images (in same order!)</div>
+                        <div class="alert alert-info" [hidden]="progressService.getStep()!=3" role="alert">Step 3: Set numbers of frames you want and click GENERATE</div>
+                        <div class="alert alert-success" [hidden]="progressService.getStep()!=4" role="alert">Congratulations. You can now save individual frames or a GIF animation</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <warp-image [src]="imagesrc1" [points]="points1" [id]="1" #warper1></warp-image>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <warp-image [src]="imagesrc2" [points]="points2" [id]="2" #warper2></warp-image>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <warp-result [warper1]="warper1" [warper2]="warper2" [imagestrip]="imagestrip" [gifel]="gif"></warp-result>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-10 image-strip" #imagestrip>
+
+                    </div>
+                    <div class="col-sm-2 gif">
+                        <img #gif>
+                    </div>
+                </div>
+
+                <div class="row footer">
+                    <div class="col-sm-12">
+                        <p>Whole website runs in your browser. Everything is completely client side. Images are never transfered to the server but are morphed with JavaScript.</p>
+                        <p>Angular.JS 2.0 for framework - Gif.JS for GIF generation - Bootstrap CSS 3.3 for styling</p>
+                        <p>You can find this <a href="https://github.com/ppisljar/angular2-image-morph">whole website</a> and <a href="https://github.com/ppisljar/image-morph-js">image morphing library</a> shared on GitHub</p>
+                        <p>&nbsp;</p>
+                        <p><a href="http://peter.pisljar.si">Peter Pisljar 2016</a></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
